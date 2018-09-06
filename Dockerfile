@@ -138,14 +138,14 @@ RUN apt-get update && \
 RUN conda install --yes \
     'conda-forge::blas=*=openblas' \
     'ipywidgets=7.2*' \
-    'pandas=0.23*' \
+   # 'pandas=0.23*' \
    # 'numexpr=2.6*' \
-    'matplotlib=2.2*' \
+   # 'matplotlib=2.2*' \
     'scipy=1.1*' \
    # 'seaborn=0.8*' \
    # 'sympy=1.1*' \
    # 'cython=0.28*' \
-    'patsy=0.5*' \
+   # 'patsy=0.5*' \
    # 'statsmodels=0.9*' \
    # 'dill=0.2*' \
     'numba=0.38*' &&\
@@ -176,5 +176,5 @@ RUN conda install --yes \
 #    rm -rf /tmp/facets 
 
 # Import matplotlib the first time to build the font cache.
-ENV XDG_CACHE_HOME /home/.cache/
-RUN MPLBACKEND=Agg python -c "import matplotlib.pyplot" 
+#ENV XDG_CACHE_HOME /home/.cache/
+#RUN MPLBACKEND=Agg python -c "import matplotlib.pyplot" 
