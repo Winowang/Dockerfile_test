@@ -148,7 +148,7 @@ RUN conda install --yes \
     'patsy=0.5*' \
    # 'statsmodels=0.9*' \
    # 'dill=0.2*' \
-    'numba=0.38*' \
+    'numba=0.38*' &&\
    # 'bokeh=0.12*' \
    # 'sqlalchemy=1.2*' \
    # 'hdf5=1.10*' \
