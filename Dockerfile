@@ -168,12 +168,12 @@ RUN conda install --yes \
     rm -rf /home/.node-gyp 
 
 # Install facets which does not have a pip or conda package at the moment
-RUN cd /tmp && \
-    git clone https://github.com/PAIR-code/facets.git && \
-    cd facets && \
-    jupyter nbextension install facets-dist/ --sys-prefix && \
-    cd && \
-    rm -rf /tmp/facets 
+#RUN cd /tmp && \
+#    git clone https://github.com/PAIR-code/facets.git && \
+#    cd facets && \
+#    jupyter nbextension install facets-dist/ --sys-prefix && \
+#    cd && \
+#    rm -rf /tmp/facets 
 
 # Import matplotlib the first time to build the font cache.
 ENV XDG_CACHE_HOME /home/.cache/
