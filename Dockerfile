@@ -154,7 +154,7 @@ RUN conda install --yes \
    # 'hdf5=1.10*' \
    # 'h5py=2.7*' \
    # 'xlrd'  && \
-    conda remove --quiet --yes --force qt pyqt && \
+   # conda remove --quiet --yes --force qt pyqt && \
     conda clean -tipsy && \
     # Activate ipywidgets extension in the environment that runs the notebook server
     jupyter nbextension enable --py widgetsnbextension --sys-prefix && \
