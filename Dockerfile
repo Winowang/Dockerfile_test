@@ -92,11 +92,11 @@ RUN cd /tmp && \
 # Install Jupyter Notebook and Hub
 #RUN conda install --quiet --yes \
 RUN conda install --yes \
-    'notebook=5.5.*' \
-    'jupyterhub=0.8.*' \
-    'jupyterlab=0.32.*' && \
+    'notebook=5.6.*' \
+    'jupyterhub=0.9.*' \
+    'jupyterlab=0.34.*' && \
     conda clean -tipsy && \
-    jupyter labextension install @jupyterlab/hub-extension@^0.8.1 && \
+    jupyter labextension install @jupyterlab/hub-extension@^0.11.0 && \
     npm cache clean --force && \
     rm -rf $CONDA_DIR/share/jupyter/lab/staging && \
     rm -rf /home/.cache/yarn 
@@ -159,8 +159,8 @@ RUN conda install --yes \
     # Activate ipywidgets extension in the environment that runs the notebook server
     jupyter nbextension enable --py widgetsnbextension --sys-prefix && \
     # Also activate ipywidgets extension for JupyterLab
-    jupyter labextension install @jupyter-widgets/jupyterlab-manager@^0.35 && \
-    jupyter labextension install jupyterlab_bokeh@^0.5.0 && \
+    jupyter labextension install @jupyter-widgets/jupyterlab-manager@^0.37 && \
+    jupyter labextension install jupyterlab_bokeh@^0.6.0 && \
     
     npm cache clean --force && \
     rm -rf $CONDA_DIR/share/jupyter/lab/staging && \
