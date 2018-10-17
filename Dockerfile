@@ -28,7 +28,7 @@ RUN apt-get update && apt-get -yq dist-upgrade \
     libhdf5-serial-dev \
     libpng12-dev \
     libzmq3-dev \
-    libss-dev \
+    libss1.0-dev \
     iputils-ping \
     net-tools \
     dh-autoreconf \
