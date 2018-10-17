@@ -134,6 +134,7 @@ RUN wget -P /usr/local/bin/  https://raw.githubusercontent.com/jupyter/docker-st
 # ffmpeg for matplotlib anim
 RUN apt-get update && \
     apt-get install -y --no-install-recommends ffmpeg && \
+    apt-get install -y --no-install-recommends libssl-dev && \
     apt-get install -y --no-install-recommends libssl1.0-dev && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
