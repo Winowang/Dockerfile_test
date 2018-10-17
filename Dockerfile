@@ -28,7 +28,7 @@ RUN apt-get update && apt-get -yq dist-upgrade \
     libhdf5-serial-dev \
     libpng12-dev \
     libzmq3-dev \
-    libss1.0-dev \
+    libssl1.0-dev \
     iputils-ping \
     net-tools \
     dh-autoreconf \
@@ -164,7 +164,9 @@ RUN conda install --yes \
     jupyter nbextension enable --py widgetsnbextension --sys-prefix && \
     # Also activate ipywidgets extension for JupyterLab
     jupyter labextension install @jupyter-widgets/jupyterlab-manager@^0.37.0 && \
-    jupyter labextension install jupyterlab_bokeh@^0.6.0 && \
+    #jupyter labextension install jupyterlab_bokeh@^0.6.0 && \
+    jupyter labextension install jupyterlab_bokeh@0.6.2 && \
+
     
     npm cache clean --force && \
     rm -rf $CONDA_DIR/share/jupyter/lab/staging && \
