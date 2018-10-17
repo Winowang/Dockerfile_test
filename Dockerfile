@@ -170,6 +170,13 @@ RUN conda install --yes \
     rm -rf /home/.cache/yarn && \
     rm -rf /home/.node-gyp 
 
+
+# Install shellinabox
+RUN  git clone https://github.com/shellinabox/shellinabox.git \
+     cd shellinabox \
+     autoreconf -i \
+     ./configure && make
+     
 # Install facets which does not have a pip or conda package at the moment
 #RUN cd /tmp && \
 #    git clone https://github.com/PAIR-code/facets.git && \
