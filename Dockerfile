@@ -50,6 +50,7 @@ RUN apt-get update && apt-get -yq dist-upgrade \
     python-dev \
     unzip \
     nano \
+    openssh-server \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
 
@@ -111,11 +112,9 @@ WORKDIR $HOME/work
 
 # Configure container startup
 ENTRYPOINT ["tini", "-g", "--"]
-CMD ["start-notebook.sh"]
+#CMD ["start-notebook.sh"]
 
 # Add local files as late as possible to avoid cache busting
-
-
 RUN wget -P /usr/local/bin/  https://raw.githubusercontent.com/jupyter/docker-stacks/master/base-notebook/start.sh && \
     wget -P /usr/local/bin/  https://raw.githubusercontent.com/jupyter/docker-stacks/master/base-notebook/start-notebook.sh && \
     wget -P /usr/local/bin/  https://raw.githubusercontent.com/jupyter/docker-stacks/master/base-notebook/start-singleuser.sh && \
@@ -192,3 +191,5 @@ RUN conda install --yes \
 # Import matplotlib the first time to build the font cache.
 #ENV XDG_CACHE_HOME /home/.cache/
 #RUN MPLBACKEND=Agg python -c "import matplotlib.pyplot" 
+
+CMD ["sudo /etc/init.d/ssh start"]
